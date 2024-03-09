@@ -5,21 +5,19 @@ pipeline {
       steps {
         build 'PES1UG21CS455-1'
         sh 'g++ main.cpp -o output'
-
       }
     }
     stage('Test') {
       steps {
-        sh './output'
+        // Intentional error - trying to execute a non-existent command
+        sh './output_non_existent_command'
       }
     }
   }
 
   post {
-    failure{
-      error : 'Pipeline failed'
+    failure {
+      echo 'Pipeline failed'
     }
   }
 }
-
-    
