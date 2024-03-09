@@ -7,6 +7,6 @@ int main(void) {
   cout << "Hello, Jenkins\n";
   cout << "I have successfully built and run\n";
   cout<<"SRN : PES1UG21CS455";
-  cout<<"New adition during usage of webhooks";
+  cout<<"Web hooks created successfully";
   return 0;
 }
