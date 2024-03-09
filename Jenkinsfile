@@ -4,37 +4,28 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script {
-  
-                    sh 'g++ main.cpp -o output'
-                }
+                build 'PES1UG21CS455-1'    
+                sh 'g++ main.cpp -o output'
             }
         }
         
         stage('Test') {
             steps {
-                script {
-                   
                     sh './output'
-                }
             }
         }
         
         stage('Deploy') {
             steps {
-                
+                echp 'deploy'
             }
         }
     }
     
     post {
-        always {
-            script {
-                
-                if (currentBuild.result == 'FAILURE') {
-                    echo 'Pipeline failed'
-                }
+        failure {
+                error 'Pipeline failed'
             }
         }
     }
-}
+
