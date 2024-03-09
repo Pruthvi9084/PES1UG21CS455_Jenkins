@@ -9,8 +9,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        // Intentional error - trying to execute a non-existent command
-        sh './output_non_existent_command'
+        sh './output'
       }
     }
   }
