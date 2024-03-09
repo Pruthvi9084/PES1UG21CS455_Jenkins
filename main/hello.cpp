@@ -7,6 +7,5 @@ int main(void) {
   cout << "Hello, Jenkins\n";
   cout << "I have successfully built and run\n";
   cout<<"SRN : PES1UG21CS455";
-  cout<<"Web hooks created successfully";
   return 0;
 }
